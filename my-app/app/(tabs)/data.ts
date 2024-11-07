@@ -1,0 +1,133 @@
+// {
+//     "data":
+//     [
+//         {
+//            "id": "1-1",
+//             "name": "Deal cực đã - Ăn thả ga 79K",
+//             "price": "79,000 ", 
+//             "image": "https://jollibee.com.vn/media/catalog/product/cache/9011257231b13517d19d9bae81fd87cc/c/o/combo_79k-15.jpg", 
+//             "categoryId": "1", 
+//         },
+//         {
+//            "id": "1-2",
+//             "name": "Combo Một Mình Ăn Ngon",
+//             "price": "78,000 ", 
+//             "image": "https://jollibee.com.vn/media/catalog/product/cache/9011257231b13517d19d9bae81fd87cc/m/_/m_n_ngon_ph_i_th_-_1.png", 
+//             "categoryId": "1", 
+//         },
+//         {
+//            "id": "1-3",
+//             "name": "Tiệc Kiểu Mới, Quà Chuẩn Gu 2",
+//             "price": "599,000 ", 
+//             "image": "https://jollibee.com.vn/media/catalog/product/cache/9011257231b13517d19d9bae81fd87cc/m/_/m_n_ngon_ph_i_th_-_6.png", 
+//             "categoryId": "1", 
+//         },
+//         {
+//            "id": "2-1",
+//             "name": "1 miếng Gà Giòn Vui Vẻ",
+//             "price": "33,000 ",
+//             "image": "https://jollibee.com.vn/media/catalog/product/cache/9011257231b13517d19d9bae81fd87cc/g/_/g_gi_n_vui_v_-_9.png",
+//             "categoryId": "2",
+//         },
+//         {
+//            "id": "2-2",
+//             "name": "1 Gà Giòn Vui Vẻ + 1 Khoai tây chiên vừa + 1 Nước ngọt",
+//             "price": "58,000 ",
+//             "image": "https://jollibee.com.vn/media/catalog/product/cache/9011257231b13517d19d9bae81fd87cc/g/_/g_gi_n_vui_v_-_2.png",
+//             "categoryId": "2",
+//         },
+//         {
+//            "id": "2-3",
+//             "name": "2 Gà Giòn Vui Vẻ + 1 Khoai tây chiên vừa + 1 Nước ngọt",
+//             "price": "91,000 ",
+//             "image": "https://jollibee.com.vn/media/catalog/product/cache/9011257231b13517d19d9bae81fd87cc/g/_/g_gi_n_vui_v_-_1_1.png",
+//             "categoryId": "2",
+//         },
+//         {
+//            "id": "2-4",
+//             "name": "2 miếng Gà Sốt Cay",
+//             "price": "70,000 ",
+//             "image": "https://jollibee.com.vn/media/catalog/product/cache/9011257231b13517d19d9bae81fd87cc/g/_/g_s_t_cay_-_6-compressed.jpg",
+//             "categoryId": "2",
+//         },
+
+//         {
+//            "id": "3-1",
+//             "name": "Mì Ý Jolly vừa",
+//             "price": "35,000 ",
+//             "image": "https://jollibee.com.vn/media/catalog/product/cache/9011257231b13517d19d9bae81fd87cc/m/_/m_jolly_-_6_7-compressed.jpg",
+//             "categoryId": "3",
+//         },
+//         {
+//            "id": "3-2",
+//             "name": "1 Mì Ý Jolly vừa + 2 Gà không xương + 1 Nước ngọt",
+//             "price": "70,000 ",
+//             "image": "https://jollibee.com.vn/media/catalog/product/cache/9011257231b13517d19d9bae81fd87cc/m/_/m_jolly_-_3.png",
+//             "categoryId": "3",
+//         },
+//         {
+//            "id": "3-3",
+//             "name": "1 Mì Ý Jolly vừa + 1 Gà Giòn Vui Vẻ + 1 Khoai tây chiên vừa + 1 Nước ngọt",
+//             "price": "93,000 ",
+//             "image": "https://jollibee.com.vn/media/catalog/product/cache/9011257231b13517d19d9bae81fd87cc/m/_/m_jolly_-_1-compressed.jpg",
+//             "categoryId": "3",
+//         },
+//         {
+//            "id": "4-1",
+//             "name": "Kem Sữa Tươi (Cúp)",
+//             "price": "5,000 ",
+//             "image": "https://jollibee.com.vn/media/catalog/product/cache/9011257231b13517d19d9bae81fd87cc/m/_/m_n_tr_ng_mi_ng_-_6.png",
+//             "categoryId": "4",
+//         },
+//         {
+//            "id": "4-2",
+//             "name": "Kem Sôcôla (Cúp)",
+//             "price": "7,000 ",
+//             "image": "https://jollibee.com.vn/media/catalog/product/cache/9011257231b13517d19d9bae81fd87cc/m/_/m_n_tr_ng_mi_ng_-_5.png",
+//             "categoryId": "4",
+//         },
+//         {
+//            "id": "4-3",
+//             "name": "Kem Sundae Dâu",
+//             "price": "15,000 ",
+//             "image": "https://jollibee.com.vn/media/catalog/product/cache/9011257231b13517d19d9bae81fd87cc/m/_/m_n_tr_ng_mi_ng_-_3.png",
+//             "categoryId": "4",
+//         },
+//         {
+//            "id": "4-4",
+//             "name": "Kem Sundae Socola",
+//             "price": "15,000 ",
+//             "image": "https://jollibee.com.vn/media/catalog/product/cache/9011257231b13517d19d9bae81fd87cc/m/_/m_n_tr_ng_mi_ng_-_4.png",
+//             "categoryId": "4",
+//         },
+//         {
+//            "id": "5-1",
+//             "name": "Nước suối",
+//             "price": "8,000 ",
+//             "image": "https://jollibee.com.vn/media/catalog/product/cache/9011257231b13517d19d9bae81fd87cc/t/h/th_c_u_ng_-_1th_c_u_ng_-_2.png",
+//             "categoryId": "5",
+//         },
+//         {
+//            "id": "5-2",
+//             "name": "Pepsi không calo vừa",
+//             "price": "12,000 ",
+//             "image": "https://jollibee.com.vn/media/catalog/product/cache/9011257231b13517d19d9bae81fd87cc/t/h/th_c_u_ng_-_3_4.png",
+//             "categoryId": "5",
+//         },
+//         {
+//            "id": "5-3",
+//             "name": "Pepsi không calo lớn",
+//             "price": "17,000 ",
+//             "image": "https://jollibee.com.vn/media/catalog/product/cache/9011257231b13517d19d9bae81fd87cc/t/h/th_c_u_ng_-_3_4_1.png",
+//             "categoryId": "5",
+//         },
+//         {
+//            "id": "5-4",
+//             "name": "Nước ép xoài đào",
+//             "price": "20,000 ",
+//             "image": "https://jollibee.com.vn/media/catalog/product/cache/9011257231b13517d19d9bae81fd87cc/t/h/th_c_u_ng_-_1.png",
+//             "categoryId": "5",
+//         },
+//     ]
+// }
+

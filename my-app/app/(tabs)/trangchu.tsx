@@ -1,0 +1,183 @@
+//home.tsx
+import React, { useState, useEffect } from 'react';
+import { TouchableOpacity, Text } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
+export const categories = [
+    { id: '1', name: 'MÓN NGON PHẢI THỬ' },
+    { id: '2', name: 'GÀ GIÒN VUI VẺ' },
+    { id: '3', name: 'MÌ Ý JOLLY' },
+    { id: '4', name: 'MÓN TRÁNG MIỆNG' },
+    { id: '5', name: 'THỨC UỐNG' },
+];
+
+const Home = () => {
+    const [searchTerm, setSearchTerm] = useState('');
+    const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+    const [products, setProducts] = useState([]);
+    const navigation = useNavigation();
+
+    useEffect(() => {
+        fetch('http://localhost:3000/data')
+            .then(res => res.json())
+            .then(data => setProducts(data))
+            .catch(err => console.error('Error fetching products:', err));
+    }, []);
+
+    const filteredProducts = products.filter(product => {
+        const isInCategory = selectedCategory ? product.categoryId === selectedCategory : true;
+        const isInSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase());
+        return isInCategory && isInSearch;
+    });
+
+    return (
+        <div className="container">
+            <header>
+                <h1>JOLLIBEE, XIN CHÀO</h1>
+                <div className="search-bar">
+                    <input
+                        type="text"
+                        placeholder="Tìm kiếm sản phẩm..."
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                    />
+                    <button onClick={() => setSearchTerm(searchTerm)}>Tìm kiếm</button>
+                </div>
+            </header>
+            <section className="banner">
+                <img src="https://jollibee.com.vn/media/mageplaza/bannerslider/banner/image/a/6/a6b53e6193c937976ed8_1.jpg" alt="Banner" />
+            </section>
+            <nav className="categories">
+                <button onClick={() => setSelectedCategory(null)}>Tất cả</button>
+
+                {categories.map(category => (
+                    <button key={category.id} onClick={() => setSelectedCategory(category.id)}>
+                        {category.name}
+                    </button>
+                ))}
+            </nav>
+            <section className="products">
+                {filteredProducts.length === 0 ? (
+                    <p>Không tìm thấy sản phẩm nào.</p>
+                ) : (
+                    <div className="product-grid">
+                        {filteredProducts.map(product => (
+                            product.name ? (
+                                <div key={product.id} className="product-card">
+                                    <img src={product.image} alt={product.name} />
+                                    <h3>{product.name}</h3>
+                                    <p>{product.price} VND</p>
+                                    <TouchableOpacity onPress={() => navigation.navigate('chitiet', { productId: product.id })}>
+                                        <Text>Xem Chi Tiết</Text>
+                                    </TouchableOpacity>
+                                </div>
+                            ) : null
+                        ))}
+                    </div>
+                )}
+            </section>            <style>{`
+                body {
+                    font-family: Arial, sans-serif;
+                    margin: 0;
+                    padding: 0;
+                    background-color: #f8f8f8;
+                    overflow-y: scroll; /* Enable vertical scrolling */
+                }
+                .container {
+                    max-width: 1200px;
+                    margin: auto;
+                    padding: 20px;
+                    overflow-x: hidden; /* Prevent horizontal scrolling */
+                }
+                header {
+                    text-align: center;
+                    padding: 20px;
+                    background-color: #fff;
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                }
+                .search-bar {
+                    margin-top: 20px;
+                }
+                input[type="text"] {
+                    padding: 10px;
+                    width: 250px;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    outline: none;
+                }
+                input[type="text"]:focus {
+                    border-color: #007BFF;
+                }
+                button {
+                    padding: 10px 15px;
+                    margin-left: 10px;
+                    border: none;
+                    border-radius: 4px;
+                    background-color: #cccccc;
+                    color: #ff6600;
+                    cursor: pointer;
+                    transition: background-color 0.3s;
+                }
+                button:hover {
+                    background-color: #ff9966;
+                }
+                .banner img {
+                    width: 100%;
+                    height: auto;
+                    display: block;
+                }
+                .categories {
+                    display: flex;
+                    justify-content: center;
+                    margin: 20px 0;
+                }
+                .categories button {
+                    margin: 0 10px;
+                    padding: 10px 15px;
+                    border: none;
+                    border-radius: 4px;
+                    background-color: #eee;
+                    transition: background-color 0.3s;
+                }
+                .categories button:hover {
+                    background-color: #ff9966;
+                }
+                .products {
+                    padding: 20px 0;
+                }
+                .product-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                    gap: 20px;
+                }
+                .product-card {
+                    border: 1px solid #ddd;
+                    border-radius: 8px;
+                    padding: 10px;
+                    background-color: #fff;
+                    text-align: center;
+                    transition: box-shadow 0.3s;
+                }
+                .product-card:hover {
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                }
+                .product-card img {
+                    width: 100%;
+                    height: auto;
+                    border-radius: 8px;
+                }
+                .product-card h3 {
+                    font-size: 1.2em;
+                    margin: 10px 0;
+                }
+                .product-card p {
+                    font-size: 1em;
+                    color: #333;
+                }
+            `}</style>
+
+        </div>
+    );
+};
+
+export default Home;
